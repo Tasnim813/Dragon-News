@@ -2,9 +2,11 @@ import React from "react";
 import { FaEye, FaShareAlt } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import { CiBookmark } from "react-icons/ci";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   const {
+    id,
     title,
     rating,
     total_view,
@@ -54,7 +56,8 @@ const NewsCard = ({ news }) => {
         {/* Details */}
         <p className="text-sm text-gray-600">
           {details.slice(0, 180)}...
-          <span className="text-primary cursor-pointer"> Read More</span>
+          <Link to={`/news-details/${id}`}
+           className=" cursor-pointer font-bold "> Read More</Link>
         </p>
       </div>
 
